@@ -1,0 +1,49 @@
+package com.tma.controller;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tma.entity.postgresql.Sale;
+import com.tma.entityDTO.postgresql.SaleDTO;
+import com.tma.exception.NoHandlerFoundException;
+import com.tma.service.postgresql.SaleService;
+
+@RestController
+@RequestMapping("sale")
+public class SaleControllerPost {
+
+	@Autowired
+	private SaleService saleService;
+
+	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Sale> add(@RequestBody Sale sales) {
+		saleService.addSale(sales.getProduct().getProductId(), sales.getTime().getTimeId(),
+				sales.getLocation().getLocationId(), BigDecimal.valueOf(sales.getDollars().val));
+		return new ResponseEntity<Sale>(sales, HttpStatus.OK);
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	public List<SaleDTO> getAllProducts() {
+		List<Sale> listSales = (List<Sale>) saleService.getAllSale();
+
+		if (listSales.size() == 0) {
+			throw new NoHandlerFoundException("NOT FOUND DATA");
+		}
+
+		List<SaleDTO> listSalesDTO = new ArrayList<>();
+		for (Sale sales : listSales) {
+			listSalesDTO.add(new SaleDTO(sales));
+		}
+		return listSalesDTO;
+	}
+}
