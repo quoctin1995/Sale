@@ -41,8 +41,8 @@ public class MainController {
 	
 	@PostMapping("/save-location")
 	public String saveLocation(@ModelAttribute Location location, HttpServletRequest request){
-		UUID uuid = UUID.randomUUID();
-		location.setLocationId(uuid);
+//		UUID uuid = UUID.randomUUID();
+//		location.setLocationId(uuid);
 		locationService.saveLocation(location);
 		request.setAttribute("locations", locationService.getAllLocation());
 		request.setAttribute("mode", "ALL");

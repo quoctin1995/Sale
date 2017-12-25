@@ -79,7 +79,13 @@
 			<div class="container text-center">
 				<h3>New location</h3>
 				<form class="form-horizontal" method="POST" action="save-location">
-					<input type="hidden" name="locationId" value="${location.locationId}" />
+					<div class="form-group">
+						<label class="control-label col-md-3">Location Id</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="locationId"
+								value="${location.locationId}" />
+						</div>
+					</div>
 
 					<div class="form-group">
 						<label class="control-label col-md-3">Country</label>
