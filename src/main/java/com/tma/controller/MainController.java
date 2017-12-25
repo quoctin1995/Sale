@@ -57,4 +57,11 @@ public class MainController {
 		return "index";
 	}
 	
+	@GetMapping("/update-location")
+	public String updateLocation(@RequestParam UUID locationId, HttpServletRequest request){
+		request.setAttribute("location", locationService.getOneLocation(locationId));
+		request.setAttribute("mode", "UPDATE");
+		return "index";
+	}
+	
 }

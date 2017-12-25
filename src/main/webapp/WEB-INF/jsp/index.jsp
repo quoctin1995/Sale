@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <html>
 <head>
@@ -17,13 +16,18 @@
 <link href="static/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="navbar navbar-inverse">
-	<a href="/" class="navbar-brand">Home</a>
-		<ul class="nav navbar-nav">
-			<li><a href="new-location">New location</a></li>
-			<li><a href="all-location">All location</a></li>
-		</ul>
-	</div>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Home</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="new-location">New location</a></li>
+				<li><a href="all-location">All location</a></li>
+			</ul>
+		</div>
+	</nav>
 
 	<c:choose>
 		<c:when test="${mode == 'HOME'}">
@@ -36,14 +40,16 @@
 		<c:when test="${mode == 'ALL'}">
 			<div class="container text-center" id="home">
 				<h3>All location</h3>
-				<div class="table-responsive">
-					<table class="table table-bordered text-left">
+				<div class="col-sm-2"></div>
+				<div class="table-responsive col-sm-8">
+					<table class="table table-bordered table-striped text-left">
 						<thead>
 							<tr>
 								<th>Location_Id</th>
 								<th>Country</th>
 								<th>City</th>
-								<th>Delete</th>
+								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -52,7 +58,16 @@
 									<td>${location.locationId}</td>
 									<td>${location.country}</td>
 									<td>${location.city}</td>
-									<td><a href="delete-location?locationId=${location.locationId}"><span>delete</span></a></td>
+									<td>
+										<a href="update-location?locationId=${location.locationId}">
+											<span>update</span>
+										</a>
+									</td>
+									<td>
+										<a href="delete-location?locationId=${location.locationId}">
+											<span>delete</span>
+										</a>
+									</td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -60,11 +75,12 @@
 				</div>
 			</div>
 		</c:when>
-		<c:when test="${mode == 'NEW'}">
+		<c:when test="${mode == 'NEW' || mode == 'UPDATE'}">
 			<div class="container text-center">
 				<h3>New location</h3>
 				<form class="form-horizontal" method="POST" action="save-location">
-					<input type="hidden" name="id" value="${location.locationId}" />
+					<input type="hidden" name="locationId" value="${location.locationId}" />
+
 					<div class="form-group">
 						<label class="control-label col-md-3">Country</label>
 						<div class="col-md-7">
@@ -72,6 +88,7 @@
 								value="${location.country}" />
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label class="control-label col-md-3">City</label>
 						<div class="col-md-7">
@@ -79,8 +96,9 @@
 								value="${location.city}" />
 						</div>
 					</div>
+
 					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Save" />
+						<input type="submit" class="btn btn-success" value="Save" />
 					</div>
 				</form>
 			</div>

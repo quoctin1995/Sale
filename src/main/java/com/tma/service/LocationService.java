@@ -10,7 +10,7 @@ public interface LocationService {
 	
 	List<Location> getAllLocation();
 	
-	Location getLocation(UUID locationId);
+	Location getOneLocation(UUID locationId);
 	
 	void deleteLocation(UUID locationId);
 

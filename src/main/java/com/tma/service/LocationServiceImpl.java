@@ -27,8 +27,8 @@ public class LocationServiceImpl implements LocationService {
 	}
 	
 	@Override
-	public Location getLocation( UUID locationId) {
-		return locationRepository.getOne(locationId);
+	public Location getOneLocation(UUID locationId) {
+		return locationRepository.findOne(locationId);
 	}
 	
 	@Override
