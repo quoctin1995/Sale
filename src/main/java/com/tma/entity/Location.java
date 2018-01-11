@@ -26,12 +26,12 @@ public class Location {
 		this.locationId = locationId;
 	}
 
-	public Location(UUID locationId, String country, String city, Set<Sale> sale) {
-		this.locationId = locationId;
-		this.country = country;
-		this.city = city;
-		this.sale = sale;
-	}
+//	public Location(UUID locationId, String country, String city, Set<Sale> sale) {
+//		this.locationId = locationId;
+//		this.country = country;
+//		this.city = city;
+//		this.sale = sale;
+//	}
 
 	@Id
 	@Column(name = "location_id", unique = true, nullable = false)

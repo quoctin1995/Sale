@@ -12,5 +12,13 @@ public class SaleProjectApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
+	@Test
+    public void test()
+    {
+		SaleProjectApplication.main(new String[]{
+                "--spring.main.web-environment=false",
+                "--spring.autoconfigure.exclude=false"
+        });
+    }
 
 }

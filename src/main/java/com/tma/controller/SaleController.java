@@ -1,8 +1,6 @@
 package com.tma.controller;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tma.entity.Sale;
-import com.tma.entityDTO.SaleDTO;
 import com.tma.service.SaleService;
 
 
@@ -30,16 +27,5 @@ public class SaleController {
 		saleService.addSale(sales.getProduct().getProductId(), sales.getTime().getTimeId(),
 				sales.getLocation().getLocationId(), BigDecimal.valueOf(sales.getDollars().val));
 		return new ResponseEntity<Sale>(sales, HttpStatus.OK);
-	}
-
-	@RequestMapping(method = RequestMethod.GET)
-	public List<SaleDTO> getAllProducts() {
-		List<Sale> listSales = saleService.getSale();
-
-		List<SaleDTO> listSalesDTO = new ArrayList<>();
-		for (Sale sales : listSales) {
-			listSalesDTO.add(new SaleDTO(sales));
-		}
-		return listSalesDTO;
 	}
 }

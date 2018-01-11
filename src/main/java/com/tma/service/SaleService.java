@@ -8,9 +8,9 @@ import com.tma.entity.Sale;
 
 public interface SaleService {
 
-	List<Sale> getSale();
+	List<Sale> getAllSale();
 
-	void saveSale(Sale sale);
+	Sale saveSale(Sale sale);
 
 	void addSale(UUID productId, UUID timeId, UUID locationId, BigDecimal dollars);
 }

@@ -25,17 +25,17 @@ public class Sale {
 	public Sale() {
 	}
 
-	public Sale(SaleId id, PGmoney dollars) {
-		this.id = id;
-		this.dollars = dollars;
-	}
+//	public Sale(SaleId id, PGmoney dollars) {
+//		this.id = id;
+//		this.dollars = dollars;
+//	}
 
-	public Sale(Location location, Product product, Time time, PGmoney dollars) {
-		this.location = location;
-		this.product = product;
-		this.time = time;
-		this.dollars = dollars;
-	}
+//	public Sale(Location location, Product product, Time time, PGmoney dollars) {
+//		this.location = location;
+//		this.product = product;
+//		this.time = time;
+//		this.dollars = dollars;
+//	}
 
 	@EmbeddedId
 	@AttributeOverrides({

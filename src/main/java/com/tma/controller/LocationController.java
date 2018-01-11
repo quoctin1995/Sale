@@ -44,7 +44,6 @@ public class LocationController {
 	}
 	
 	
-	
 }
 
 //	@Autowired
@@ -61,7 +60,7 @@ public class LocationController {
 //	@RequestMapping(value = "location/{locationId}", method = RequestMethod.GET)
 //	public ResponseEntity<List<LocationDTO>> getAllLocation(UUID locationId) {
 //		Location listLocation = null;
-//		listLocation = locationService.getLocation(locationId);
+//		listLocation = locationService.getOneLocation(locationId);
 //
 ////		if (listLocation.size() == 0) {
 ////			throw new NoHandlerFoundException("NOT FOUND DATA");

@@ -6,7 +6,7 @@ import java.util.UUID;
 import com.tma.entity.Location;
 
 public interface LocationService {
-	void saveLocation(Location location);
+	Location saveLocation(Location location);
 	
 	List<Location> getAllLocation();
 	

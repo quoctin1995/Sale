@@ -31,7 +31,7 @@ public class ProductController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public List<ProductDTO> getAllProducts() {
-		List<Product> listProduct = productService.findAllProduct();
+		List<Product> listProduct = productService.getAllProduct();
 
 		List<ProductDTO> listProductDTO = new ArrayList<>();
 		for (Product product : listProduct) {

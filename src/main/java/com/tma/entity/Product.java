@@ -27,13 +27,13 @@ public class Product {
 		this.productId = productId;
 	}
 
-	public Product(UUID productId, Integer item, String class_pr, String inventory, Set<Sale> sale) {
-		this.productId = productId;
-		this.item = item;
-		this.class_pr = class_pr;
-		this.inventory = inventory;
-		this.sale = sale;
-	}
+//	public Product(UUID productId, Integer item, String class_pr, String inventory, Set<Sale> sale) {
+//		this.productId = productId;
+//		this.item = item;
+//		this.class_pr = class_pr;
+//		this.inventory = inventory;
+//		this.sale = sale;
+//	}
 
 	@Id
 	@Column(name = "product_id", unique = true, nullable = false)

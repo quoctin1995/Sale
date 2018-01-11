@@ -16,8 +16,8 @@ public class LocationServiceImpl implements LocationService {
 	private LocationRepository locationRepository;
 
 	@Override
-	public void saveLocation(Location location) {
-		locationRepository.save(location);
+	public Location saveLocation(Location location) {
+		return locationRepository.save(location);
 
 	}
 

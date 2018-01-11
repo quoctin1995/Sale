@@ -20,8 +20,8 @@ public class TimeServiceImpl implements TimeService {
 	}
 
 	@Override
-	public void saveTime(Time time) {
-		timeRepository.save(time);
+	public Time saveTime(Time time) {
+		return timeRepository.save(time);
 	}
 
 }

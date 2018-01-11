@@ -33,7 +33,7 @@
 		<c:when test="${mode == 'HOME'}">
 			<div class="container" id="home">
 				<div class="text-center">
-					<h3>Welcome</h3>
+					<h2>Welcome</h2>
 				</div>
 			</div>
 		</c:when>

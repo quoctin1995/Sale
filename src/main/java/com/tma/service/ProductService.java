@@ -5,7 +5,7 @@ import java.util.List;
 import com.tma.entity.Product;
 
 public interface ProductService {
-	void saveProduct(Product product);
+	Product saveProduct(Product product);
 
-	List<Product> findAllProduct();
+	List<Product> getAllProduct();
 }

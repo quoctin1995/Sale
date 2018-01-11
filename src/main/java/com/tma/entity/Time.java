@@ -27,13 +27,13 @@ public class Time {
 		this.timeId = timeId;
 	}
 
-	public Time(UUID timeId, Integer month, Integer quarter, Integer year, Set<Sale> sale) {
-		this.timeId = timeId;
-		this.month = month;
-		this.quarter = quarter;
-		this.year = year;
-		this.sale = sale;
-	}
+//	public Time(UUID timeId, Integer month, Integer quarter, Integer year, Set<Sale> sale) {
+//		this.timeId = timeId;
+//		this.month = month;
+//		this.quarter = quarter;
+//		this.year = year;
+//		this.sale = sale;
+//	}
 
 	@Id
 	@Column(name = "time_id", unique = true, nullable = false)

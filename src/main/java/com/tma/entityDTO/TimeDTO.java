@@ -21,32 +21,17 @@ public class TimeDTO {
 		return timeId;
 	}
 
-	public void setTimeId(UUID timeId) {
-		this.timeId = timeId;
-	}
-
 	public Integer getMonth() {
 		return month;
 	}
 
-	public void setMonth(Integer month) {
-		this.month = month;
-	}
 
 	public Integer getQuarter() {
 		return quarter;
 	}
 
-	public void setQuarter(Integer quarter) {
-		this.quarter = quarter;
-	}
-
 	public Integer getYear() {
 		return year;
-	}
-
-	public void setYear(Integer year) {
-		this.year = year;
 	}
 
 }

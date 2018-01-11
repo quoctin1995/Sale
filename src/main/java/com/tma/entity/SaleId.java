@@ -14,11 +14,11 @@ public class SaleId implements java.io.Serializable {
 	public SaleId() {
 	}
 
-	public SaleId(UUID productId, UUID timeId, UUID locationId) {
-		this.productId = productId;
-		this.timeId = timeId;
-		this.locationId = locationId;
-	}
+//	public SaleId(UUID productId, UUID timeId, UUID locationId) {
+//		this.productId = productId;
+//		this.timeId = timeId;
+//		this.locationId = locationId;
+//	}
 
 	@Column(name = "product_id", nullable = false)
 	public UUID getProductId() {
